@@ -1,0 +1,32 @@
+#includestdio.h;
+class add()
+long double student,double coursecode,int i,int j;
+student=arr[i];
+for(i=0;i<9;i++)
+{
+	scanf(%d,i);
+	printf("student id is= "%d,i);
+	
+	
+}
+coursecode=arr[j];
+for(j=0;j<5;j++);
+{
+	scanf(%d,j);
+	printf("course code is=",%d,j);
+	
+	
+}
+class retrieve()
+{
+	add.student();
+	add.coursecode();
+}
+
+int main
+{
+	printf("Enter the student id =  ");
+	scanf(%d,student);
+	printf("Enter the course number = ");
+	scanf(%d,course code);
+}
