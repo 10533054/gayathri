@@ -1,0 +1,18 @@
+students=[]
+
+class Student:
+     
+    def __init__(self,student_id,name,course_code):
+        self.id=student_id
+        self.name=name
+        self.course_code=course_code
+
+    def add(self,student):
+        students.append(student)
+        
+
+
+
+a=Student(10,'Gayathri','Python')
+a.add(a)
+print(students[0].id)
