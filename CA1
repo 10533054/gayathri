@@ -1,3 +1,4 @@
+
 students=[]
 
 class Student:
@@ -7,12 +8,38 @@ class Student:
         self.name=name
         self.course_code=course_code
 
-    def add(self,student):
-        students.append(student)
         
+class Datas:
 
+    def add(self,student):                                         # Adds the data to a pre existing list
+        students.append(student)
 
+    def retrieve(self):                                            # Pops the last entry from the list
+        students.pop()
+        return students[-1]
 
-a=Student(10,'Gayathri','Python')
-a.add(a)
-print(students[0].id)
+    def view_all(self):                                            # Views all students entered so far
+        result=""
+        i=0
+        
+        for _temp in students:
+            result+="Entry: "+str(i)
+            i+=1
+            result+="\t\t Student id: "+str(_temp.id)
+            result+="\t\t Student name: "+str(_temp.name)
+            result+="\t\t Student course: "+str(_temp.course_code)
+            result+="\n"
+
+        print(result)
+    
+    
+
+ds=Datas()
+student=Student(10,'Gayathri','Python')
+ds.add(student)
+student=Student(11,'Anoop','Python')
+ds.add(student)
+student=Student(12,'Sreedarsh','Python')
+ds.add(student)
+print(ds.view_all())
+print(ds.retrieve().id)
