@@ -1,14 +1,16 @@
 
-students=[]
+tudents=[]
 
+# Student class starts
 class Student:
      
     def __init__(self,student_id,name,course_code):
         self.id=student_id
         self.name=name
         self.course_code=course_code
+# Student class ends
 
-        
+#Data structure manipulation class starts        
 class Datas:
 
     def add(self,student):                                         # Adds the data to a pre existing list
@@ -30,16 +32,38 @@ class Datas:
             result+="\t\t Student course: "+str(_temp.course_code)
             result+="\n"
 
-        print(result)
+        return(result)
+#Data structure manipulation class ends        
     
     
 
 ds=Datas()
-student=Student(10,'Gayathri','Python')
-ds.add(student)
-student=Student(11,'Anoop','Python')
-ds.add(student)
-student=Student(12,'Sreedarsh','Python')
-ds.add(student)
+
+while(True):
+    choice=int(input("1: Add a student\n 2: View all students\n 3:See the latest entry"))
+    if choice==1:
+        _std_id=int(input("Enter the student id"))
+        
+        while(len(_std_name)<>8):
+            print("\n *The student id must be 8 characters long.")
+            _std_id=int(input("Enter the student id"))
+        
+        _std_name=input("Enter the name of the student")
+        
+        _std_course=input("Enter the student course id")
+         while(len(_std_course)<>7):
+            print("\n *The course id must be 7 characters long.")
+            _std_course=input("Enter the student course id")
+        
+        _temp_student=new Student(_std_id,_std_name,_std_course)
+        ds.add(student)
+
+    decision=input("\n Do you want to repeat any of the operations")
+    if decision=='Y' or decision=='y':
+        continue
+    else:
+        break
+    
+
 print(ds.view_all())
 print(ds.retrieve().id)
