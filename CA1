@@ -1,5 +1,5 @@
 
-tudents=[]
+students=[]
 
 # Student class starts
 class Student:
@@ -17,8 +17,9 @@ class Datas:
         students.append(student)
 
     def retrieve(self):                                            # Pops the last entry from the list
+        last_student=students[-1]
         students.pop()
-        return students[-1]
+        return last_student
 
     def view_all(self):                                            # Views all students entered so far
         result=""
@@ -44,26 +45,30 @@ while(True):
     if choice==1:
         _std_id=int(input("Enter the student id"))
         
-        while(len(_std_name)<>8):
+        while(not len(str(_std_id))==8):
             print("\n *The student id must be 8 characters long.")
             _std_id=int(input("Enter the student id"))
         
         _std_name=input("Enter the name of the student")
         
         _std_course=input("Enter the student course id")
-         while(len(_std_course)<>7):
+        while(not len(_std_course)==7):
             print("\n *The course id must be 7 characters long.")
             _std_course=input("Enter the student course id")
         
-        _temp_student=new Student(_std_id,_std_name,_std_course)
-        ds.add(student)
+        _temp_student=Student(_std_id,_std_name,_std_course)
+        ds.add(_temp_student)
 
-    decision=input("\n Do you want to repeat any of the operations")
+
+    decision=input("\n Do you want to repeat any of the operations. \n Enter Y to continue N to exit.")
     if decision=='Y' or decision=='y':
         continue
+    elif decision=='N' or decision=='n':
+        print('You chose to exit')
+        break
     else:
+        print('unsupported option')
         break
     
 
 print(ds.view_all())
-print(ds.retrieve().id)
