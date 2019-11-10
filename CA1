@@ -1,4 +1,3 @@
-
 students=[]
 
 # Student class starts
@@ -40,8 +39,8 @@ class Datas:
     def sort(self):
         #insertion Sort
         for i in range(len(students)):
-            holder = students[i+1]
-            pos = i+1
+            holder = students[i]
+            pos = i
         
             while (pos > 0 and students[pos - 1].id > holder.id):
                 # Swap the number down the list
