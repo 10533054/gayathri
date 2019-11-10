@@ -1,4 +1,4 @@
-students=[]
+udents=[]
 
 # Student class starts
 class Student:
@@ -21,6 +21,8 @@ class Datas:
         return last_student
 
     def view_all(self):                                            # Views all students entered so far
+
+        self.sort()
         result=""
         i=0
         
@@ -33,6 +35,11 @@ class Datas:
             result+="\n"
 
         return(result)
+
+    def sort(self):
+        for i in range(0,len(students)-1):
+            if students[i].id>students[i+1].id:
+                students[i],students[i+1]=students[i+1],students[i]
 #Data structure manipulation class ends        
     
     
