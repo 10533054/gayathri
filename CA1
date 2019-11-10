@@ -1,4 +1,4 @@
-udents=[]
+students=[]
 
 # Student class starts
 class Student:
@@ -38,6 +38,7 @@ class Datas:
 
     def sort(self):
         for i in range(0,len(students)-1):
+            for j in range(1+1,len(students))
             if students[i].id>students[i+1].id:
                 students[i],students[i+1]=students[i+1],students[i]
 #Data structure manipulation class ends        
