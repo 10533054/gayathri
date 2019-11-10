@@ -1,4 +1,5 @@
-tudents=[]
+
+students=[]
 
 # Student class starts
 class Student:
@@ -16,8 +17,8 @@ class Datas:
         students.append(student)
 
     def retrieve(self):                                            # Pops the last entry from the list
-        last_student=students[-1]
-        students.pop()
+        last_student=students[0]
+        students.pop(0)
         return last_student
 
     def view_all(self):                                            # Views all students entered so far
@@ -37,10 +38,18 @@ class Datas:
         return(result)
 
     def sort(self):
-        for i in range(0,len(students)-1):
-            for j in range(i+1,len(students))
-            if students[i].id>students[i+1].id:
-                students[i],students[i+1]=students[i+1],students[i]
+        #insertion Sort
+        for i in range(len(students)):
+            holder = students[i+1]
+            pos = i+1
+        
+            while (pos > 0 and students[pos - 1].id > holder.id):
+                # Swap the number down the list
+                students[pos] = students[pos - 1]
+                pos = pos - 1
+            # Break and do the final swap
+            students[pos] = holder
+
 #Data structure manipulation class ends        
     
     
@@ -68,6 +77,11 @@ while(True):
         
     elif choice==2:
         print(ds.view_all())
+
+    elif choice==3:
+        print("The entry with the smallest reg number will be removed.")
+        _temp_deleted=ds.retrieve()
+        print("The current object is removed :\n\tID:",_temp_deleted.id,"\tNAME:",_temp_deleted.name,"\tCOURSE CODE:",_temp_deleted.course_code)
 
 
     decision=input("\n Do you want to repeat any of the operations. \n Enter Y to continue N to exit.")
